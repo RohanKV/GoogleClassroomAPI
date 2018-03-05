@@ -72,13 +72,14 @@ def main():
             print(course['name'])
             print(course)
 	course_id = '10448307619'
+	
 	try:
 		course = service.courses().get(id=course_id).execute()
-		print (u'Course "{10448307619}" found').format(course.get('name'))
+		print(course)
 	except Exception as e:
 		error = simplejson.loads(e.content).get('error')
 		if(error.get('code') == 404):
-		    print (u'Course with ID "{10448307619}" not found.').format(course_id)
+		    print (u'Course with ID "{}" not found.{}').format(course_id)
 		else:	
 		    raise
 
