@@ -68,7 +68,10 @@ def main():
         print('Courses:')
         for course in courses:
             print(course['name'])
-
+    
+    #to get the course data
+    for course in courses:
+        print(course)
 
 if __name__ == '__main__':
     main()
